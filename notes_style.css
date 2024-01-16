@@ -1,0 +1,22 @@
+#section-notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(64, 245, 23);
+    background-image: linear-gradient(to bottom right, grey, #917474);
+    margin: 20px 0;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.card {
+    width: 360px;
+    height: 440px;
+    text-align: center;
+    /* background-image: url(); */
+    background-color: bisque;
+    background-image: linear-gradient(rgb(199, 20, 20));
+    margin: 30px 26px;
+    border-radius: 20px;
+    display: inline-block;
+}
