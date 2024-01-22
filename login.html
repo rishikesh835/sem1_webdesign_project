@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishikesh</title>
     <link rel="stylesheet" href="index_style.css">
-    <link rel="icon" type="image/x-icon" href="./images/images.jpeg">
+
+    <link rel="icon" type="image/x-icon" href="./images/logo.webp">
 </head>
 
 <body>
     <nav id="navbar">
         <div id="logo">
-            <img src="./images/images (16).jpeg" alt="image" class="nav-items">
+            <img src="./images/logo.webp" alt="image" class="nav-items">
         </div>
         <ul type="none" class="nav-links">
 
@@ -30,23 +31,26 @@
     </nav>
 
     <div id="social-toggle">
-        <a href="https://www.google.com/"><img src="./images/download (12).jpeg" alt="logo"></a>
-        <a href="./#"><img src="./images/download (12).jpeg" alt="logo"></a>
-        <a href="./#"><img src="./images/download (12).jpeg" alt="logo"></a>
-        <a href="./#"><img src="./images/download (12).jpeg" alt="logo"></a>
+        <a href="www.linkedin.com/in/rishikesh835"><img src="./images/linkedin.png" alt="logo"></a>
+        <a href="https://www.instagram.com/mishrarishikesh65/?next=%2F"><img
+                src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5zdGFncmFtJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="logo"></a>
+        <a href="https://github.com/rishikesh835"><img src="./images/github-logo.png" alt="logo"></a>
+        <a href="https://leetcode.com/rishikesh835/"><img src="./images/LeetCode_logo_black.png" alt="logo"></a>
     </div>
-    <div id="social-toggle2">
+    <!-- <div id="social-toggle2">
         <a href="https://www.google.com/"><img src="./images/images (8).jpeg" alt="logo"></a>
         <a href="./#"><img src="./images/images (8).jpeg" alt="logo"></a>
         <a href="./#"><img src="./images/images (8).jpeg" alt="logo"></a>
         <a href="./#"><img src="./images/images (8).jpeg" alt="logo"></a>
-    </div>
+    </div> -->
     <div id="login-section">
         <div class="login-form">
             <h1>Login</h1>
             <form action="/">
 
-                <input class="input" type="email" id="username" name="user" placeholder="your email or username" required>
+                <input class="input" type="email" id="username" name="user" placeholder="your email or username"
+                    required>
                 <input class="input" type="password" id="password" placeholder="password" required>
                 <button class="btn" onclick="validateForm()">Sign in</button>
             </form>
@@ -83,7 +87,15 @@
     </div>
 
     <script>
+        const userMap = new Map([
+        ["rishikeshmishra835@gmail.com", 'password'],
+        ["ratnamojha82@gmail.com", '@12345678@'],
+        ["bunty07@gmail.com", 'solana@123'],
+        ["yuvraj897@gmail.com", 'yuvraj@123]']
+
+    ]);
         function validateForm() {
+            event.preventDefault();
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
@@ -97,13 +109,20 @@
                 alert("Please enter your password.");
                 return false;
             }
+            if (userMap.has(username) && userMap.get(username) === password) {
+                // Redirect to the home page (replace with your actual redirect logic)
+                alert('Login successful! Redirecting to the home page.');
+                window.location.href = 'index.html'; // Change 'home.html' to your home page URL
+            } else {
+                alert('Invalid username or password. Please try again.');
+                
+              }
+            
 
-            // If validation passes, you can proceed with form submission
-            alert("Form submitted successfully!");
-            return true;
         }
-
+       
     </script>
+    <script src="./login.js"></script>
 </body>
 
 </html>
